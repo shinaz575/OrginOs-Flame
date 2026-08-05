@@ -1,0 +1,21 @@
+name: OriginOS Flame Build Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check build machine
+        run: |
+          echo "=== CPU ==="
+          nproc
+          lscpu
+          echo "=== RAM ==="
+          free -h
+          echo "=== STORAGE ==="
+          df -h
+          echo "=== OS ==="
+          cat /etc/os-release
